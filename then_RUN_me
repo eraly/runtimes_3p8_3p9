@@ -1,0 +1,1 @@
+grep "INFO_PRINT: RUNTIME:" *_results/*
