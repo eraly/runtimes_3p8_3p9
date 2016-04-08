@@ -3,5 +3,5 @@ mvn clean install
 cd ../revised_run
 mvn clean install
 cd ..
-./snapshot_vs_golden_run golden_run golden_results list_of_ex &
-./snapshot_vs_golden_run revised_run revised_results list_of_ex & 
+./snapshot_vs_golden_run golden_run golden_results list_of_examples &
+./snapshot_vs_golden_run revised_run revised_results list_of_examples & 
