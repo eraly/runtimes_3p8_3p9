@@ -118,7 +118,7 @@ public class GravesLSTMCharModellingExample {
 			}
 
 			iter.reset();	//Reset iterator for another epoch
-            if(numEpochs == 3) {
+            if(numEpochs == 1) {
                 break;
             }
 		}
