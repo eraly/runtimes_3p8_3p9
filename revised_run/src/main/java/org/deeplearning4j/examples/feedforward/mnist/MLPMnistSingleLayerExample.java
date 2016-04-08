@@ -71,7 +71,7 @@ public class MLPMnistSingleLayerExample {
         long start = System.currentTimeMillis();
         for( int i=0; i<numEpochs; i++ ){
             model.fit(mnistTrain);
-            if(numEpochs == 3) {
+            if(numEpochs == 1) {
                 break;
             }
         }
