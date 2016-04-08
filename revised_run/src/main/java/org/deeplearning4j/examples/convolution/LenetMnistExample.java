@@ -88,7 +88,7 @@ public class LenetMnistExample {
             }
             log.info(eval.stats());
             mnistTest.reset();
-            if(nEpochs == 1) {
+            if(i == 1) {
                 break;
             }
         }
