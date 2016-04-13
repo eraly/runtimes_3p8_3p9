@@ -94,6 +94,6 @@ public class LenetMnistExample {
         }
         long end = System.currentTimeMillis();
         log.info("****************Example finished********************");
-        System.out.printf("INFO_PRINT: RUNTIME: %d",end-start);
+        System.out.printf("INFO_PRINT: RUNTIME: %d\n",end-start);
     }
 }

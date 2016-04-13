@@ -127,7 +127,7 @@ public class GravesLSTMCharModellingExample {
 		}
 
         long end = System.currentTimeMillis();
-        System.out.printf("INFO_PRINT: RUNTIME: %d",end-start);
+        System.out.printf("INFO_PRINT: RUNTIME: %d\n",end-start);
 		System.out.println("\n\nExample complete");
 	}
 

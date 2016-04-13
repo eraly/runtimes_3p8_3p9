@@ -85,7 +85,7 @@ public class MLPMnistSingleLayerExample {
             eval.eval(next.getLabels(), output);
         }
         long end = System.currentTimeMillis();
-        System.out.printf("INFO_PRINT: RUNTIME: %d",end-start);
+        System.out.printf("INFO_PRINT: RUNTIME: %d\n",end-start);
 
         log.info(eval.stats());
         log.info("****************Example finished********************");

@@ -1,0 +1,24 @@
+#!/bin/bash
+#Takes arguments
+#  - $1 is list of examples
+
+
+#USAGE: ./snapshot_vs_golden_run list_of_examples
+
+mkdir -p golden_results
+mkdir -p revised_results
+while read i; do
+
+    example_name_class=`echo $i | perl -pe 's/.*(org.deeplearning)/$1/;s/\//./g;s/\.java$//'`
+    example_results_file=`echo $example_name_class | awk -F '.' '{print $NF}'`
+
+    cd golden_run
+    mvn -X exec:java -Dexec.mainClass=$example_name_class > ../golden_results/$example_results_file &
+    cd ..
+
+    cd revised_run
+    mvn -X exec:java -Dexec.mainClass=$example_name_class > ../revised_results/$example_results_file &
+    cd ..
+
+done < ../$1
+wait
