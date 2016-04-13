@@ -20,5 +20,5 @@ while read i; do
     mvn -X exec:java -Dexec.mainClass=$example_name_class > ../revised_results/$example_results_file &
     cd ..
 
-done < ../$1
+done < $1
 wait
