@@ -102,6 +102,7 @@ public class GravesLSTMCharModellingExample {
 
 		//Do training, and then generate and print samples from network
         int miniBatchNumber = 0;
+        long start = System.currentTimeMillis();
 		for( int i=0; i<numEpochs; i++ ){
             while(iter.hasNext()){
                 DataSet ds = iter.next();
@@ -120,8 +121,13 @@ public class GravesLSTMCharModellingExample {
             }
 
 			iter.reset();	//Reset iterator for another epoch
+            if(i == 1) {
+                break;
+            }
 		}
 
+        long end = System.currentTimeMillis();
+        System.out.printf("INFO_PRINT: RUNTIME: %d",end-start);
 		System.out.println("\n\nExample complete");
 	}
 
