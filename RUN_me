@@ -10,9 +10,10 @@ cd revised_run
 mvn clean install
 cd ..
 
-./golden_vs_revised_run $1
 echo "= * = * = * = * = * = * = * = * = * = * = * = *= * = * = * = * = * = * = * = * = * = * = * = * * = * = * = * = * = *"
 echo "WAITING FOR RUNS TO COMPLETE........."
+./golden_vs_revised_run $1
+echo "= * = * = * = * = * = * = * = * = * = * = * = *= * = * = * = * = * = * = * = * = * = * = * = * * = * = * = * = * = *"
 echo ""
 echo ""
 ./then_RUN_me $1
