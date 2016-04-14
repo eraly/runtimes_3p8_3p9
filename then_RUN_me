@@ -1,1 +1,19 @@
-grep "INFO_PRINT: RUNTIME:" *_results/*
+#!/bin/bash
+#Takes arguments
+#  - $1 is list of examples
+
+
+#USAGE: ./snapshot_vs_golden_run list_of_examples
+while read i; do
+
+    example_name_class=`echo $i | perl -pe 's/.*(org.deeplearning)/$1/;s/\//./g;s/\.java$//'`
+    example_results_file=`echo $example_name_class | awk -F '.' '{print $NF}'`
+
+    echo "= * = * = * = * = * = * = * = * = * = * = * = *= * = * = * = * = * = * = * = * = * = * = * = * * = * = * = * = * = *"
+    golden_runtime=`grep INFO_PRINT golden_results/$example_results_file  | awk '{print $3}'`
+    revised_runtime=`grep INFO_PRINT revised_results/$example_results_file  | awk '{print $3}'`
+    echo $example_results_file runs $(((golden_runtime-revised_runtime)*100/golden_runtime))% faster in the snapshot
+
+done < $1
+echo "= * = * = * = * = * = * = * = * = * = * = * = *= * = * = * = * = * = * = * = * = * = * = * = * * = * = * = * = * = *"
+wait
