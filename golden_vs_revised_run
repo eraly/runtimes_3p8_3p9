@@ -21,4 +21,9 @@ while read i; do
     cd ..
 
 done < $1
+echo "= * = * = * = * = * = * = * = * = * = * = * = *= * = * = * = * = * = * = * = * = * = * = * = * * = * = * = * = * = *"
+echo "WAITING FOR RUNS TO COMPLETE........."
+echo "..."
+echo ".."
+echo "."
 wait
